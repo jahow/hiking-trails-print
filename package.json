@@ -1,0 +1,27 @@
+{
+  "name": "hiking-map-printer",
+  "version": "1.0.0",
+  "description": "A simple app for the simple joys of life",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "olivier.guyot@camptocamp.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@camptocamp/inkmap": "^1.1.1",
+    "ol": "^6.5.0",
+    "ol-ext": "^3.1.19",
+    "parcel-bundler": "^1.12.5"
+  }
+}
