@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@camptocamp/inkmap": "^1.1.1",
+    "jspdf": "^2.3.1",
     "ol": "^6.5.0",
     "ol-ext": "^3.1.19",
     "parcel-bundler": "^1.12.5"

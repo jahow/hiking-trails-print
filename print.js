@@ -1,6 +1,7 @@
 import { toLonLat } from "ol/proj";
 import { getDistance } from "ol/sphere";
-import { downloadBlob, print } from "@camptocamp/inkmap";
+import { print } from "@camptocamp/inkmap";
+import { jsPDF } from "jspdf";
 
 const genericLayer = {
   type: 'WMTS',
@@ -59,5 +60,25 @@ export function printAndDownload(rectangleGeometry) {
     scaleBar: true,
     northArrow: true,
     attributions: 'bottom-right'
-  }).then(imageBlob => downloadBlob(imageBlob, 'hiking-trails.png'));
+  }).then(imageBlob => {
+    // initializes the PDF document
+    const doc = new jsPDF({
+      orientation: 'landscape',
+      unit: 'mm',
+      format: 'a4',
+      putOnlyUsedFonts: true,
+    });
+
+    // create an Object URL from the map image blob and add it to the PDF
+    const imgUrl = URL.createObjectURL(imageBlob);
+    doc.addImage(imgUrl, 'JPEG', 10, 30, size[0], size[1]);
+
+    // add a title
+    doc.setFont('times', 'bold');
+    doc.setFontSize(20);
+    doc.text('This is going to be great.', 148.5, 15, null, null, 'center');
+
+    // download the result
+    doc.save('hiking-trails.pdf');
+  });
 }
