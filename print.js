@@ -57,6 +57,7 @@ export function printAndDownload(rectangleGeometry) {
     scale,
     projection: 'EPSG:2056',
     scaleBar: true,
-    northArrow: true
+    northArrow: true,
+    attributions: 'bottom-right'
   }).then(imageBlob => downloadBlob(imageBlob, 'hiking-trails.png'));
 }
