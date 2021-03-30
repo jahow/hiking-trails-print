@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>hiking trails map generator</title>
+  <style>
+      html {
+          height: 100%;
+      }
+      body {
+          height: 100%;
+          margin: 0;
+          background: #f6f6f6;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      }
+      #map-root {
+          width: 800px;
+          height: 600px;
+          margin-bottom: 20px;
+          border-radius: 3px;
+          border: 1px solid grey;
+      }
+  </style>
+</head>
+<body>
+  <p>Use the map to select an area and click the button to print it.</p>
+  <div id="map-root"></div>
+  <button type="button" id="print-btn">Print</button>
+
+  <!-- include the script at the end to make sure the page is loaded -->
+  <script src="./app.js"></script>
+</body>
+</html>
