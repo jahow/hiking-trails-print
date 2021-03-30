@@ -4,7 +4,8 @@
   "description": "A simple app for the simple joys of life",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve",
+    "build": "webpack build --mode production"
   },
   "author": "olivier.guyot@camptocamp.com",
   "license": "MIT",
